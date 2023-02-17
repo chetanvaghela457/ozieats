@@ -1,0 +1,94 @@
+[
+  {
+    "category_name": "Cold Drinks",
+    "items": [
+      {
+        "image": "https://5.imimg.com/data5/IN/DK/GP/SELLER-88087163/pepsi-2-liter-bottle-500x500.jpg",
+        "name": "Pepsi",
+        "description": "A soft drink is a drink that usually contains carbonated water",
+        "price": 20
+      },
+      {
+        "image": "https://5.imimg.com/data5/IN/DK/GP/SELLER-88087163/pepsi-2-liter-bottle-500x500.jpg",
+        "name": "Pepsi",
+        "description": "A soft drink is a drink that usually contains carbonated water",
+        "price": 20
+      },
+      {
+        "image": "https://5.imimg.com/data5/IN/DK/GP/SELLER-88087163/pepsi-2-liter-bottle-500x500.jpg",
+        "name": "Pepsi",
+        "description": "A soft drink is a drink that usually contains carbonated water",
+        "price": 20
+      }
+    ]
+  },
+  {
+    "category_name": "Cold Drinks",
+    "items": [
+      {
+        "image": "https://5.imimg.com/data5/IN/DK/GP/SELLER-88087163/pepsi-2-liter-bottle-500x500.jpg",
+        "name": "Pepsi",
+        "description": "A soft drink is a drink that usually contains carbonated water",
+        "price": 20
+      },
+      {
+        "image": "https://5.imimg.com/data5/IN/DK/GP/SELLER-88087163/pepsi-2-liter-bottle-500x500.jpg",
+        "name": "Pepsi",
+        "description": "A soft drink is a drink that usually contains carbonated water",
+        "price": 20
+      },
+      {
+        "image": "https://5.imimg.com/data5/IN/DK/GP/SELLER-88087163/pepsi-2-liter-bottle-500x500.jpg",
+        "name": "Pepsi",
+        "description": "A soft drink is a drink that usually contains carbonated water",
+        "price": 20
+      }
+    ]
+  },
+  {
+    "category_name": "Juices",
+    "items": [
+      {
+        "image": "https://5.imimg.com/data5/IN/DK/GP/SELLER-88087163/pepsi-2-liter-bottle-500x500.jpg",
+        "name": "Pepsi",
+        "description": "A soft drink is a drink that usually contains carbonated water",
+        "price": 20
+      },
+      {
+        "image": "https://5.imimg.com/data5/IN/DK/GP/SELLER-88087163/pepsi-2-liter-bottle-500x500.jpg",
+        "name": "Pepsi",
+        "description": "A soft drink is a drink that usually contains carbonated water",
+        "price": 20
+      },
+      {
+        "image": "https://5.imimg.com/data5/IN/DK/GP/SELLER-88087163/pepsi-2-liter-bottle-500x500.jpg",
+        "name": "Pepsi",
+        "description": "A soft drink is a drink that usually contains carbonated water",
+        "price": 20
+      }
+    ]
+  },
+  {
+    "category_name": "Drinks",
+    "items": [
+      {
+        "image": "https://5.imimg.com/data5/IN/DK/GP/SELLER-88087163/pepsi-2-liter-bottle-500x500.jpg",
+        "name": "Pepsi",
+        "description": "A soft drink is a drink that usually contains carbonated water",
+        "price": 20
+      },
+      {
+        "image": "https://5.imimg.com/data5/IN/DK/GP/SELLER-88087163/pepsi-2-liter-bottle-500x500.jpg",
+        "name": "Pepsi",
+        "description": "A soft drink is a drink that usually contains carbonated water",
+        "price": 20
+      },
+      {
+        "image": "https://5.imimg.com/data5/IN/DK/GP/SELLER-88087163/pepsi-2-liter-bottle-500x500.jpg",
+        "name": "Pepsi",
+        "description": "A soft drink is a drink that usually contains carbonated water",
+        "price": 20
+      }
+    ]
+  }
+]

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="advertisementModel"
+            type="com.admin.ozieats_app.model.AdvertisementModel" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/mainAdvertise"
+        android:layout_width="@dimen/_220sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_5sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/imageViewItemImage"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_100sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/restaurant" />
+
+            <TextView
+                android:id="@+id/textViewItemName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageViewItemImage"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:text="@{advertisementModel.restaurant_item_name}"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewRestaurantName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_5sdp"
+                android:layout_below="@id/textViewItemName"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:text="@{advertisementModel.restaurant_name}"
+                android:textColor="@color/lightGrey" />
+
+            <RatingBar
+                android:id="@+id/restaurantRatings"
+                style="@style/customRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewRestaurantName"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:rating="4" />
+
+            <TextView
+                android:id="@+id/textViewItemPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/textViewRestaurantName"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="@dimen/_15ssp"/>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

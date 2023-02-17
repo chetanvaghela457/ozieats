@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="feedBackListener"
+            type="com.admin.ozieats_app.ui.sendFeedBack.FeedbackViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.sendFeedBack.SendFeedbackActivity">
+
+        <include layout="@layout/toolbar_layout"
+            android:id="@+id/feedbackToolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:elevation="@dimen/_8sdp"
+            android:layout_margin="@dimen/_16sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feedbackToolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="@string/feedback_text"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.admin.ozieats_app.utils.EmojiRatingBar
+                    android:id="@+id/emoji_ratingBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/tv_opinion"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/opinion_title"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/emoji_ratingBar" />
+
+                <EditText
+                    android:id="@+id/et_opinion"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@drawable/dash_square_bg"
+                    android:hint="@string/opinion_text"
+                    android:padding="@dimen/_8sdp"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv_opinion"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_opinion" />
+
+                <LinearLayout
+                    android:id="@+id/ll_uploadScreenShot"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_85sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/dash_square_bg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="@+id/et_opinion"
+                    app:layout_constraintStart_toStartOf="@+id/et_opinion"
+                    app:layout_constraintTop_toBottomOf="@+id/et_opinion">
+
+                    <ImageView
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:contentDescription="@string/icon"
+                        android:src="@drawable/upload_feedback" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:text="@string/upload_sc"
+                        android:textSize="@dimen/_10ssp" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_scList"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    android:overScrollMode="never"
+                    tools:listitem="@layout/item_feedback_sc_layout"
+                    app:layout_constraintEnd_toEndOf="@+id/ll_uploadScreenShot"
+                    app:layout_constraintStart_toStartOf="@+id/ll_uploadScreenShot"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_uploadScreenShot" />
+
+                <TextView
+                    android:id="@+id/tv_dismiss"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:text="@string/dismiss"
+                    android:textAllCaps="false"
+                    android:gravity="center"
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:background="@drawable/square_yellow_line_bg"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_submit"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/rv_scList"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_scList" />
+
+                <TextView
+                    android:id="@+id/tv_submit"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:text="@string/submit"
+                    android:textAllCaps="false"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="bold"
+                    android:background="@drawable/square_solid_yellow_bg"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/rv_scList"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tv_dismiss"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_scList" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

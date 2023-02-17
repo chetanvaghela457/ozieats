@@ -1,0 +1,27 @@
+[
+  {
+
+    "range": 1,
+    "range_String": "Under 1km"
+  },
+  {
+    "range": 3,
+    "range_String": "Under 3km"
+  },
+  {
+    "range": 5,
+    "range_String": "Under 5km"
+  },
+  {
+    "range": 10,
+    "range_String": "Under 10km"
+  },
+  {
+    "range": 15,
+    "range_String": "Under 15km"
+  },
+  {
+    "range": 20,
+    "range_String": "Under 20km"
+  }
+]

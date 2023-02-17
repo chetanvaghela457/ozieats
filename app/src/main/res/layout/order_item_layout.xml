@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="orderItemModel"
+            type="com.admin.ozieats_app.model.OrderItemModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewOrderPhoto"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardCornerRadius="@dimen/_5sdp">
+
+            <ImageView
+                android:id="@+id/imageViewOrderPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/restaurant" />
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@id/cardViewOrderPhoto">
+
+            <TextView
+                android:id="@+id/itemsName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{orderItemModel.itemName}"
+                android:textColor="@color/black"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textSize="@dimen/_11ssp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`QTY`+ orderItemModel.itemQuantity}"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textColor="@color/grey"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textSize="@dimen/_10ssp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/itemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF9501</color>
+    <color name="colorPrimaryDark">#FF9501</color>
+    <color name="colorAccent">#F3AA45</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="grey">#535252</color>
+    <color name="lightGrey">#B3B0B0</color>
+
+    <color name="textColor">#FF572C</color>
+    <color name="facebookButton">#3958A0</color>
+    <color name="googleButton">#FF491B</color>
+    <color name="reviewBackground">#F2F2EF</color>
+    <color name="menuItemBackground">#F4F4F1</color>
+    <color name="supportBackground">#E8E8E6</color>
+    <color name="pink">#F43678</color>
+    <color name="recent_search_background">#F1EEEC</color>
+    <color name="order_pending_for_accept">#B7C453</color>
+    <color name="order_pickedup">#00A44A</color>
+    <color name="order_accepted_by_restaurant">#FF9501</color>
+    <color name="button_green">#008000</color>
+    <color name="blue">#1939E7</color>
+
+</resources>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="locationListener"
+            type="com.admin.ozieats_app.ui.location.LocationViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.location.UserLocationActivity">
+
+
+            <TextView
+                android:id="@+id/location_string1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/allow_your_location"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_25sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/location_string2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/location_string2"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/location_string1" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:onClick="@{locationListener::onLocationAllowButtonClick}"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="@string/sure_i_like_that"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/location_string2" />
+
+
+            <!--        <TextView-->
+            <!--            android:id="@+id/tv_link"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginStart="@dimen/_20sdp"-->
+            <!--            android:layout_marginTop="@dimen/_25sdp"-->
+            <!--            android:layout_marginEnd="@dimen/_20sdp"-->
+            <!--            android:background="@color/colorPrimary"-->
+            <!--            android:gravity="center"-->
+            <!--            android:onClick="@{locationListener::onTVClick}"-->
+            <!--            android:paddingTop="@dimen/_10sdp"-->
+            <!--            android:paddingBottom="@dimen/_10sdp"-->
+            <!--            android:text="@string/sure_i_like_that"-->
+            <!--            android:textColor="@color/white"-->
+            <!--            android:textSize="@dimen/_14sdp"-->
+            <!--            android:textStyle="bold"-->
+            <!--            app:layout_constraintLeft_toLeftOf="@+id/tv_location"-->
+            <!--            app:layout_constraintRight_toRightOf="@+id/tv_location"-->
+            <!--            app:layout_constraintTop_toBottomOf="@id/tv_location" />-->
+
+            <ImageView
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:contentDescription="@null"
+                android:src="@drawable/map_icon"
+                app:layout_constraintBottom_toTopOf="@id/location_string1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include
+            android:id="@+id/noInternetLayout"
+            layout="@layout/no_internet_layout"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

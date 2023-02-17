@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="restaurantModel"
+            type="com.admin.ozieats_app.model.RestaurantModel" />
+
+        <variable
+            name="homeViewListener"
+            type="com.admin.ozieats_app.ui.home.fragments.home.HomeViewModel" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_10sdp"
+        android:id="@+id/constraintRestaurantItem">
+
+        <ImageView
+            android:id="@+id/imageViewMainBacgroundImage"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_150sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/restaurant"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/restaurantLogo"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/favouriteAddOrRemove"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rating_left_corner_bg"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            app:layout_constraintBottom_toTopOf="@id/mainLinear"
+            app:layout_constraintRight_toRightOf="parent">
+
+
+            <RatingBar
+                android:id="@+id/mainRatingbar"
+                style="@style/foodRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isIndicator="true"
+                android:layout_gravity="center"
+                android:focusable="false"
+                android:clickable="false"
+                android:rating="4" />
+
+            <TextView
+                android:id="@+id/tvTotalReview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:text="@{``+restaurantModel.totalRating}"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_13ssp"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewRestaurantName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{restaurantModel.restaurant_name}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainLinear"/>
+
+        <TextView
+            android:id="@+id/textViewDeliveryCharges"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            tools:text="nfefefefenfenfef"
+            android:text="@{``+restaurantModel.delivery_charges}"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewRestaurantName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/textViewAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            tools:text="nfefefefenfenfef"
+            android:text="@{restaurantModel.delivery_address}"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDeliveryCharges"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/mainLinear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingBottom="@dimen/_15sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewMainBacgroundImage">
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/textViewFoodType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:text="@{restaurantModel.restaurant_category}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+
+            </RelativeLayout>
+
+
+
+
+
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

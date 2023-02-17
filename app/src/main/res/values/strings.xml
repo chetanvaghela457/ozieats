@@ -1,0 +1,177 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Ozieats</string>
+
+    <string name="google_client_id" tools:ignore="TypographyDashes">809513160300-4fvb3t2gjab375p0163l8epedpo08voh.apps.googleusercontent.com</string>
+    <string name="google_client_secret_key">O_BFdp-tUCNa9kj0z6nL2fJv</string>
+
+    <string name="social_login_main_string">Your favorite local\ncafes and restaurants\nat your fingertips</string>
+    <string name="social_login_sub_string">Find the best restaurant\nyou want by your location\nor neighbourhood</string>
+    <string name="continue_with_email">Or Continue with your email address</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="continue_with_your_social_accounts">Continue with your social accounts.</string>
+    <string name="username_or_email_id"><font size="13">Username or Email id</font></string>
+    <string name="password_string"><font size="13">Password</font></string>
+    <string name="skip"><u>Skip</u></string>
+    <string name="don_t_have_and_account_sign_up">Don\'t have and account? <font fgcolor='#FFFF9500'>Sign Up</font></string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="login">Login</string>
+    <string name="sign_in_to_continue">Sign in to continue</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="username"><font size="13">Username</font></string>
+    <string name="email_id"><font size="13">Email Id</font></string>
+    <string name="welcome_user">Welcome User</string>
+    <string name="sign_up_to_join">Sign up to join</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="have_an_account">Have an Account?<font fgcolor='#FFFF9500'> Sign In</font></string>
+    <string name="allow_your_location">Allow Your Location</string>
+    <string name="location_string2">We will need your location to\n give you better experince</string>
+    <string name="sure_i_like_that">Sure I\'d like that</string>
+    <string name="no_record_found">Not Found</string>
+    <string name="select_search_range">SELECT SEARCH RANGE</string>
+    <string name="forget_password">Forget Password</string>
+    <string name="forget_string">Enter your phone below and we\'ll\nsend you an message with instruction on how\nto reset your password</string>
+    <string name="enter_your_phone">Enter your Phone</string>
+    <string name="send">Send</string>
+    <string name="explore">Explore</string>
+    <string name="my_orders">My Orders</string>
+    <string name="favourite">Favourite</string>
+    <string name="menu">Menu</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logout">Logout</string>
+    <string name="about_restaurant_string">Welcome to walker doughnuts Finder street Located,located at 2/26 Elizabeth street,\nMelbourne vic,3000 you can reach us on +63122154554</string>
+    <string name="about_us">About Us</string>
+    <string name="opening_hours">Opening Hours</string>
+    <string name="restaurant_detail">Restaurant Detail</string>
+    <string name="write_a_review">WRITE A REVIEW</string>
+    <string name="write_your_review">Write your review</string>
+    <string name="submit_review">Submit Review</string>
+    <string name="phone_no"><font size="13">Phone No</font></string>
+    <string name="refer_frd_text">Tell your friends about us</string>
+    <string name="refer_frd_long_text">Use mentioned below code and invite them to use Ozieats</string>
+    <string name="icon">Icon</string>
+    <string name="frequently_asked_questions">Frequently Asked Questions</string>
+    <string name="email_support">Email Support</string>
+    <string name="feedback_text">How Happy are you with Ozy Eats?</string>
+    <string name="opinion_title">How can we make Ozi Eats better?</string>
+    <string name="opinion_text">We Value your Opinion</string>
+    <string name="upload_sc">UPLOAD YOUR SCREENSHOT</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="submit">Submit</string>
+    <string name="send_feedback">Send Feedback</string>
+    <string name="support">Support</string>
+    <string name="order_desc">Press \"I am here\" button once you arrive to notify the restaurant</string>
+    <string name="navigate_restaurant"><u>Navigate Restaurant</u></string>
+    <string name="view_detail"><u>View Detail</u></string>
+    <string name="order_id">Order ID</string>
+    <string name="order_pickup">You have successfully picked up the order.\n Enjoy your meal.\n Thankyou for using Ozi Eats. </string>
+    <string name="item_qty">Item Qty</string>
+    <string name="get_started">Get Started</string>
+    <string name="check_out">Checkout</string>
+    <string name="change_password">Change Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="Verify_otp">Verification Code</string>
+    <string name="verify">Verify</string>
+    <string name="resend_otp">Resend</string>
+    <string name="enter_otp_text">"Enter the OTP sent to verification "</string>
+    <string name="enter_your_code">Enter Your Code</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="new_password_string">Password must contain one Uppercase letter,one number and be at least 8 Character long.</string>
+    <string name="refer_friend">Refer a Friend</string>
+    <string name="places_near_you">PLACES NEAR YOU</string>
+    <string name="speak">Speak...</string>
+    <string name="track_order">Track Order</string>
+    <string name="place_order">Place Order</string>
+    <string name="goto_restaurant">Go to\n Restaurant</string>
+    <string name="scan_pickup"><![CDATA[Scan & Pickup]]></string>
+    <string name="i_am_here">I am here</string>
+    <string name="user_your_app_when_you_arrive">User your app when you arrive</string>
+    <string name="go_to_restaurant_new">Go to Restaurant</string>
+    <string name="scan_qr">Please \'Scan QR\' button once you are ready to \n pick up the order</string>
+    <string name="location">Location</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="mark_as_fav">MARK AS FAVOURITE</string>
+    <string name="item_total">Item Total</string>
+    <string name="dummy_total">\u20B9299.00</string>
+    <string name="delivery_charge">Delivery Charge</string>
+    <string name="donate_message">Donate \u20B91 to Feeding India Foundation</string>
+    <string name="one_rs">\u20B9 1</string>
+    <string name="total_rs">\u20B9 399.00</string>
+    <string name="navjivan_restaurant">Navjivan Restaurant</string>
+    <string name="rest_address">Jakatnaka Surat</string>
+    <string name="delivery_msg">This order with Navjivan\'s Punjabi Foods Was Delivered</string>
+    <string name="order_detail">Order Details</string>
+    <string name="order_number_title">Order Number</string>
+    <string name="order_number">123456789</string>
+    <string name="cash_on_delivery">Cash On Delivery</string>
+    <string name="date">Date</string>
+    <string name="phone_number">Phone number</string>
+    <string name="mobile_number">1234567890</string>
+    <string name="deliver_to">Deliver To</string>
+
+    <!-- ============ FB Credentials =============-->
+    <string name="share_app_message">Hey I am using Ozieats for purchase item online: Here is my referral code : </string>
+    <string name="facebook_app_id">1108494766189450</string>
+    <string name="fb_login_protocol_scheme">fb1108494766189450</string>
+    <string name="web_client_id">1077662513709-3iog8n3thipcfvvm1e0f59fervgj2103.apps.googleusercontent.com</string>
+    <string name="google_direction_api_key">AIzaSyD48pWnEEpb3jWUgiaYgef3mItabsHIXKs</string>
+<!--    <string name="google_maps_key">AIzaSyD48pWnEEpb3jWUgiaYgef3mItabsHIXKs</string>-->
+<!--     "current_key": "AIzaSyAtggoYeX2LF_l41TOGDp_Fi79pGIEhm1E"-->
+
+
+    <string name="cart_item_available_string">You have item available in cart. Do you want to Discard items and add this items?</string>
+    <string name="share">Share</string>
+    <string name="food_name">Vaggie Delight Mom\'s moon Burger</string>
+    <string name="contact_gmail">itlogixglobal@gmail.com</string>
+    <string name="order_placed">Thank you for placing order.Kindly\nscan order QR code to pickup and order\n at the restaurant.</string>
+    <string name="your_qr_didnot_match">Your  QR didn\'t  match with your order please scan right code.</string>
+    <string name="more_info">More Info</string>
+    <string name="faqs">FAQs</string>
+
+
+    <string name="frequently_asked_questions_array">
+    <font color="#000" size="16"><b> 1. What exactly is OzieatsApp?</b></font><br />"\n"
+    <font color="#A7A7A7" size="15">- OzieatsApp is the mobile application with a sole objective of empowering small businesses, local food outlets and other businesses with a tool that enables them to reach customers within a few taps on the screen.This mobile application helps you combat the terror of e-commerce giants that are becoming more &amp; more gigantic. With the help of this app, the restaurant owners can market their menu online and also manage everything by using their smartphones/ devices.</font><br />"\n\n"
+   <font color="#000" size="16"><b> 2. Is it possible to have an application in iOS and Android framework?</b></font>"\n"
+    <font color="#8C8D92" size="15">- Yes, most of the apps we build are compatible to both the mobile platforms. We use native and hybrid framework that enable us to support Web, iOS &amp; Android apps.</font><br />"\n\n"
+    <font color="#000" size="16"><b> 3.Can I edit my order? </b></font>"\n"
+    <font color="#8C8D92" size="15">- In order to edit your order , please click on " Help " and then " I wantto modify items in my order ".We will connect you to a support agent who will assist you with the same. Please note that your order can be edited only if the restaurant is yet to confirm your order . Post that , we may not be able to modify your order if food preparation has started.</font><br />"\n\n"
+        <font color="#000" size="16"><b> 4.Can I order from any location? </b></font>"\n"
+    <font color="#8C8D92" size="15">-  We will deliver from any restaurant listed on the search results for your location.We recommend enabling your GPS location finder and letting the app auto-detect your location </font><br />"\n\n"
+        <font color="#000" size="16"><b> 5.Is single order from many restaurants possible? </b></font>"\n"
+    <font color="#8C8D92" size="15">- We currently do not support this functionality , However , you can place orders for individual items from different restaurants.</font><br />"\n\n"
+       <font color="#000" size="16"><b> 6.Is there a minimum order value? </b></font>"\n"
+    <font color="#8C8D92" size="15">- We have no minimum order value and you can order for any amount.</font><br />"\n\n"
+     <font color="#000" size="16"><b> 7.If I have a query regarding the business app, whom I can get in touch with?</b></font>"\n"
+    <font color="#8C8D92" size="15">- You can contact our support team by simply filling up the contact form, by mailing us at itlogixglobal@gmail.com. Our team will get back to you at the earliest.For quick discussion, you can also chat with us 24/7.</font><br />"\n\n"
+    </string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="pending">Order Pending For Accept</string>
+    <string name="no_favourite_restaurants_found">No favourite Restaurants Found</string>
+    <string name="no_establishment_found">No Establishment Found</string>
+    <string name="search_for"><font color="#535252">Search For </font></string>
+    <string name="no_internet_available">No Internet Available!</string>
+    <string name="retry">Retry</string>
+    <string name="i_am_here_deliver_to_my_car">I am here - Deliver to My Car</string>
+    <string name="i_am_here_to_pickup">I am here to Pickup</string>
+    <string name="enter_car_number">Enter vehicle number</string>
+    <string name="enter_your_car_number">Enter your vehicle number</string>
+    <string name="location_title">Location</string>
+    <string name="location_message">Please allow the permission</string>
+    <string name="location_settings">Location Settings</string>
+    <string name="unknown_location">Unknown Location</string>
+    <string name="search_address">Search for your address</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="invite_friend">Invite Friend</string>
+    <string name="your_code">YOUR CODE</string>
+
+    <plurals name="num_locations_reported">
+        <item quantity="zero">No location reported</item>
+        <item quantity="one">One location reported</item>
+        <item quantity="other">%d locations reported</item>
+    </plurals>
+</resources>

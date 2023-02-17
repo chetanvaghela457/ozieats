@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="referListener"
+            type="com.admin.ozieats_app.ui.referFriend.ReferFriendViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.referFriend.ReferFriendActivity">
+
+        <include
+            android:id="@+id/referFrdToolbar"
+            layout="@layout/toolbar_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_cups"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_64sdp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_refer_friend"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/referFrdToolbar" />
+
+        <TextView
+            android:id="@+id/tv_short_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:text="@string/refer_frd_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/iv_cups"
+            app:layout_constraintStart_toStartOf="@+id/iv_cups"
+            app:layout_constraintTop_toBottomOf="@+id/iv_cups" />
+
+        <TextView
+            android:id="@+id/tv_long_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:text="@string/refer_frd_long_text"
+            android:textAlignment="center"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_short_desc"
+            app:layout_constraintStart_toStartOf="@+id/tv_short_desc"
+            app:layout_constraintTop_toBottomOf="@+id/tv_short_desc" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_refer_code"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/refere_code_square_bg"
+            android:orientation="vertical"
+            android:padding="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_long_desc">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/your_code"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/yourRefferelCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:letterSpacing="1"
+                android:text="fjfhjfhj"
+                android:textColor="@color/button_green"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@color/colorPrimaryDark"
+            android:onClick="@{referListener::onInviteButtonClick}"
+            android:text="@string/invite_friend"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/ll_refer_code"
+            app:layout_constraintStart_toStartOf="@+id/ll_refer_code"
+            app:layout_constraintTop_toBottomOf="@+id/ll_refer_code" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

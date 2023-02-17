@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="myordersModel"
+            type="com.admin.ozieats_app.model.MyOrdersModel" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_3sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewOrderPhoto"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_55sdp"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <ImageView
+                    android:id="@+id/imageViewOrderPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textViewItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toRightOf="@id/cardViewOrderPhoto"
+                android:text="@{myordersModel.restaurant_name}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/textViewRestaurantName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewItemName"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toRightOf="@id/cardViewOrderPhoto"
+                android:text="@{myordersModel.orderId}"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/textTotalBill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewRestaurantName"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toRightOf="@id/cardViewOrderPhoto"
+                android:text="@{``+myordersModel.totalPrice}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_12sdp" />
+
+            <ImageView
+                android:id="@+id/favouriteIcon"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/heart_active" />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

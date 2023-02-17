@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_8sdp">
+
+    <ImageView
+        android:id="@+id/iv_vegetarianLogo"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        app:srcCompat="@drawable/menu_active"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="29dp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@null"/>
+
+    <TextView
+        android:id="@+id/tv_foodName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/food_name"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_vegetarianLogo"
+        app:layout_constraintStart_toEndOf="@+id/iv_vegetarianLogo"
+        app:layout_constraintTop_toTopOf="@+id/iv_vegetarianLogo" />
+    
+    <LinearLayout
+        android:id="@+id/ll_itemContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        app:layout_constraintTop_toBottomOf="@+id/iv_vegetarianLogo"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
+            android:background="@drawable/square_green_bg"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_foodPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dummy_total"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/ll_itemContainer"
+        app:layout_constraintTop_toTopOf="@+id/ll_itemContainer"
+        app:layout_constraintBottom_toBottomOf="@+id/ll_itemContainer"/>
+
+    <TextView
+        android:id="@+id/tv_totalFoodPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dummy_total"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_foodPrice"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_foodPrice"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:background="@color/grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_foodPrice"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

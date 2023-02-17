@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "1077662513709",
+    "firebase_url": "https://ozieats-app.firebaseio.com",
+    "project_id": "ozieats-app",
+    "storage_bucket": "ozieats-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077662513709:android:2682a7b7d910e2222d16a4",
+        "android_client_info": {
+          "package_name": "com.admin.ozieats_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1077662513709-sir7s0spqu1406c0qkoct2sp97ga8ea9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.admin.ozieats_app",
+            "certificate_hash": "10654bd44aeeb23bdf97194c663c6bd19f70633a"
+          }
+        },
+        {
+          "client_id": "1077662513709-q43eg2t90shh51ut279jt32vusl1q3vt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.admin.ozieats_app",
+            "certificate_hash": "c15a8b3e9af903f8133663111d6a16f421a76d91"
+          }
+        },
+        {
+          "client_id": "1077662513709-1pop5b4121rgsaatdo2068dcug7i8cug.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtggoYeX2LF_l41TOGDp_Fi79pGIEhm1E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1077662513709-qg2bemp19gfnskaitna9sf0jakrm4t9r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1077662513709-3iog8n3thipcfvvm1e0f59fervgj2103.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ozieats.ozieats-app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

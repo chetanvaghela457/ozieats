@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="searchListener"
+            type="com.admin.ozieats_app.ui.home.fragments.searchproducts.SearchViewModel" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.home.fragments.searchproducts.SearchFragment">
+
+            <include
+                android:id="@+id/searchToolbar"
+                layout="@layout/home_toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_mutableSearchResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Result for "
+                android:textSize="@dimen/_14ssp"
+                android:visibility="gone"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/searchToolbar" />
+
+            <TextView
+                android:id="@+id/tv_fixedSearchResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_9sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:drawableStart="@drawable/ic_search_24"
+                android:drawablePadding="@dimen/_3sdp"
+                android:text="Burger"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_mutableSearchResult" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recentSearchesRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/recent_search_item_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_mutableSearchResult"/>
+
+            <TextView
+                android:id="@+id/tv_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_9sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="CATEGORIES"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recentSearchesRecycler" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_foodList"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_8sdp"
+                android:overScrollMode="never"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_label" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_searchList"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_8sdp"
+                android:overScrollMode="never"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_label" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/emptySearchLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/emptyCartImage"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:src="@drawable/emoji_2_active"
+                    android:tint="@color/colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:text="No Establishment Found"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/emptyCartImage" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollViewSearchRangeHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:visibility="visible"
+            app:behavior_hideable="true"
+            android:elevation="20dp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bottom_sheet_header"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:paddingBottom="@dimen/_3sdp"
+                        android:text="@string/select_search_range"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_17sdp" />
+
+                    <ImageView
+                        android:id="@+id/closeFilter"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:contentDescription="@null"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:padding="@dimen/_2sdp"
+                        android:src="@drawable/filter_close" />
+
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@color/grey" />
+
+                <TextView
+                    android:id="@+id/txtNoRecordFound"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/no_record_found"
+                    android:textSize="@dimen/_16sdp"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewRanges"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:paddingStart="@dimen/_16sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    android:visibility="visible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_search_range_layout" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollViewLocationAddress"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_400sdp"
+            android:layout_alignParentBottom="true"
+            android:visibility="visible"
+            app:behavior_hideable="true"
+            android:elevation="20dp"
+            android:background="@drawable/bottom_sheet_header"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/closeLocationDialog"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:contentDescription="@null"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/filter_close" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/addLocationEditTextSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/edittext_dotted_border"
+                    android:drawableLeft="@drawable/search_icon"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:imeOptions="actionDone"
+                    android:hint="@string/search_address"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_4sdp"
+                    android:paddingEnd="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:textSize="@dimen/_13ssp" />
+
+                <TextView
+                    android:id="@+id/useCurrentLocationTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:drawableLeft="@drawable/compass"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:text="Use current location"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_11ssp" />
+
+                <TextView
+                    android:id="@+id/useRecentTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:text="Recently Searched"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_15ssp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:alpha="0.4"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@color/lightGrey"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recentAddressRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/recent_address_layout" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

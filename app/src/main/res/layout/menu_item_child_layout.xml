@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="menuItemChildModel"
+            type="com.admin.ozieats_app.model.MenuItemChildModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemClickConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@color/menuItemBackground"
+        android:padding="@dimen/_5sdp">
+
+        <ImageView
+            android:id="@+id/imageViewItemImage"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageViewItemImage"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textViewItemName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{menuItemChildModel.itemName}"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewItemDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{menuItemChildModel.itemDescription}"
+                android:textColor="@color/lightGrey"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewItemName" />
+
+
+            <TextView
+                android:id="@+id/textViewItemPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{`$ `+menuItemChildModel.itemPrice}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewItemDescription" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

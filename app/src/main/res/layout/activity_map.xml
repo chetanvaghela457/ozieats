@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="locationListener"
+            type="com.admin.ozieats_app.ui.location.LocationViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/constraintLayoutMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.location.MapActivity">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mainConstraint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <fragment
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_sheet_header"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:paddingBottom="@dimen/_3sdp"
+                        android:text="@string/select_search_range"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_17sdp" />
+
+                    <View
+                        android:id="@+id/view_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@color/grey" />
+
+                    <TextView
+                        android:id="@+id/txtNoRecordFound"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/no_record_found"
+                        android:textSize="@dimen/_16sdp"
+                        android:visibility="gone" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewRanges"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:background="@color/white"
+                        android:overScrollMode="never"
+                        android:visibility="visible"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_search_range_layout" />
+
+                </LinearLayout>
+
+                <!--  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:background="@drawable/bottom_sheet_header"
+                      app:layout_constraintBottom_toBottomOf="parent"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintStart_toStartOf="parent">
+
+                    &lt;!&ndash;  <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="@dimen/_20sdp"
+                          android:background="@drawable/bottom_sheet_header" />&ndash;&gt;
+
+
+
+                  </LinearLayout>-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--   <androidx.core.widget.NestedScrollView
+                   android:id="@+id/scrollViewSearchRange"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentBottom="true"
+                   android:visibility="visible"
+                   app:behavior_hideable="false"
+                   app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent">
+
+
+
+               </androidx.core.widget.NestedScrollView>-->
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <include
+            android:id="@+id/noInternetLayout"
+            layout="@layout/no_internet_layout"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

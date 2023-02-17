@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="homeViewModel"
+            type="com.admin.ozieats_app.ui.home.fragments.home.HomeViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/mainCoordinatorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include
+                    android:id="@+id/home_toolbar"
+                    layout="@layout/home_toolbar" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/mainHomeItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/home_toolbar">
+
+                    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                        android:id="@+id/mSwipeRefreshLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.core.widget.NestedScrollView
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/advertisementString"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:text="ADVERTISEMENT"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_13ssp"
+                                    android:textStyle="bold"
+                                    android:visibility="@{homeViewModel.dataNotFound ? View.VISIBLE : View.GONE}" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/advertisementRecycler"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/advertisementString"
+                                    android:orientation="horizontal"
+                                    android:overScrollMode="never"
+                                    android:visibility="@{homeViewModel.dataNotFound ? View.VISIBLE : View.GONE}"
+                                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                    tools:listitem="@layout/advertisement_item_layout" />
+
+                                <LinearLayout
+                                    android:id="@+id/mainLinear"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/advertisementRecycler"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/placesNearYou"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_10sdp"
+                                        android:layout_marginTop="@dimen/_7sdp"
+                                        android:layout_marginBottom="@dimen/_5sdp"
+                                        android:text="@string/places_near_you"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_13ssp"
+                                        android:textStyle="bold"
+                                        android:visibility="gone" />
+
+                                    <TextView
+                                        android:id="@+id/placesNearString"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="@dimen/_5sdp"
+                                        android:textColor="@color/grey"
+                                        android:textSize="@dimen/_12ssp"
+                                        android:textStyle="bold" />
+
+                                </LinearLayout>
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/restaurantRecycler"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/mainLinear"
+                                    android:overScrollMode="never"
+                                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                    tools:listitem="@layout/restaurant_item_layout" />
+
+                            </RelativeLayout>
+
+                        </androidx.core.widget.NestedScrollView>
+
+                    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/emptyLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/home_toolbar"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/emptyCartImage"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:src="@drawable/emoji_2_active"
+                        android:tint="@color/colorPrimary"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:text="@string/no_establishment_found"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/emptyCartImage" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </RelativeLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scrollViewSearchRangeHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:elevation="20dp"
+                android:visibility="visible"
+                app:behavior_hideable="true"
+                app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_sheet_header"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:orientation="horizontal"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:text="@string/select_search_range"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_17sdp" />
+
+                        <ImageView
+                            android:id="@+id/closeFilter"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:contentDescription="@null"
+                            android:padding="@dimen/_2sdp"
+                            android:src="@drawable/filter_close" />
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@color/grey" />
+
+                    <TextView
+                        android:id="@+id/txtNoRecordFound"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/no_record_found"
+                        android:textSize="@dimen/_16sdp"
+                        android:visibility="gone" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewRanges"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:paddingStart="@dimen/_16sdp"
+                        android:paddingEnd="@dimen/_16sdp"
+                        android:visibility="visible"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_search_range_layout" />
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scrollViewLocationAddress"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_400sdp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bottom_sheet_header"
+                android:elevation="20dp"
+                android:visibility="visible"
+                app:behavior_hideable="true"
+                app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/closeLocationDialog"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="@dimen/_25sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:contentDescription="@null"
+                        android:padding="@dimen/_2sdp"
+                        android:src="@drawable/filter_close" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/addLocationEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/edittext_dotted_border"
+                        android:drawableLeft="@drawable/search_icon"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:ems="10"
+                        android:hint="@string/search_address"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:paddingStart="@dimen/_8sdp"
+                        android:paddingTop="@dimen/_4sdp"
+                        android:paddingEnd="@dimen/_8sdp"
+                        android:paddingBottom="@dimen/_4sdp"
+                        android:textSize="@dimen/_13ssp" />
+
+                    <TextView
+                        android:id="@+id/useCurrentLocationTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:drawableLeft="@drawable/compass"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:text="Use current location"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_11ssp" />
+
+                    <TextView
+                        android:id="@+id/useRecentTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:text="Recently Searched"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15ssp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:alpha="0.4"
+                        android:background="@color/lightGrey" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recentAddressRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/recent_address_layout" />
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <!--<include
+            android:id="@+id/noInternetLayout"
+            layout="@layout/no_internet_layout"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

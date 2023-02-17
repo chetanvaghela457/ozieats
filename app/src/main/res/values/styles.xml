@@ -1,0 +1,86 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowSwipeToDismiss">false</item>
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+<!--        <item name="boxStrokeColor">@color/colorPrimary</item>-->
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="android:background">@drawable/edittext_dotted_border</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MyApp.TextInputLayout.Rounded" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <style name="customRatingBar"
+        parent="android:style/Widget.Material.RatingBar.Small">
+    </style>
+
+    <style name="foodRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating_drawable</item>
+        <item name="android:minHeight">25dip</item>
+        <item name="android:maxHeight">25dip</item>
+    </style>
+
+    <style name="SlideAnimation" parent="android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_from_bottom</item>
+        <item name="android:activityOpenExitAnimation">@anim/none</item>
+        <item name="android:activityCloseEnterAnimation">@anim/none</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_to_bottom</item>
+    </style>
+
+    <style name="LeftToRihgtAnimation" parent="android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_from_left</item>
+        <item name="android:activityOpenExitAnimation">@anim/none</item>
+        <item name="android:activityCloseEnterAnimation">@anim/none</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_right_to_left</item>
+    </style>
+
+    <style name="Theme.LeftToRihgtAnimation" parent="AppTheme">
+        <item name="android:windowAnimationStyle">@style/LeftToRihgtAnimation</item>
+    </style>
+
+    <style name="Theme.SlideAnimWindow" parent="AppTheme">
+        <item name="android:windowAnimationStyle">@style/SlideAnimation</item>
+    </style>
+
+    <style name="reviewRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/review_rating_drawable</item>
+        <item name="android:minHeight">25dip</item>
+        <item name="android:maxHeight">25dip</item>
+    </style>
+
+    <style name="FacebookLoginButton">
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <!-- BottomSheet Dialog Style -->
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="PauseDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/PauseDialogAnimation</item>
+    </style>
+
+    <style name="PauseDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/fadein</item>
+        <item name="android:windowExitAnimation">@anim/fadeout</item>
+    </style>
+
+</resources>
