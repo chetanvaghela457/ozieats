@@ -5,14 +5,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.gms.google-services'
 
 android {
-    signingConfigs {
-        /*config {
-            keyAlias 'openOzieats'
-            keyPassword 'openSourceOzieats$786'
-            storeFile file('ozieats.jks')
-            storePassword 'openSourceOzieats$786'
-        }*/
-    }
+    
     compileSdkVersion rootProject.compileSdkVersion
     buildToolsVersion rootProject.buildToolsVersion
 
@@ -23,7 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        resValue "string", "google_maps_key", (project.findProperty("GOOGLE_MAPS_API_KEY") ?: "AIzaSyAtggoYeX2LF_l41TOGDp_Fi79pGIEhm1E")
+        resValue "string", "google_maps_key", (project.findProperty("GOOGLE_MAPS_API_KEY") ?:  (project.findProperty("GOOGLE_MAPS_API_KEY") )
         multiDexEnabled true
     }
 
@@ -42,14 +35,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             manifestPlaceholders = [crashlyticsEnabled: true]
-//            signingConfig signingConfigs.config
         }
         release {
             debuggable true
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//            signingConfig signingConfigs.config
         }
     }
 
@@ -61,7 +52,7 @@ android {
         checkReleaseBuilds false
         abortOnError false
     }
-    /*// for solving error com.android.build.api.transform.TransformException: java.util.zip.ZipException: duplicate entry: org/apache/commons/io/CopyUtils.class
+  
     configurations {
         all*.exclude group: 'commons-io'
     }*/
