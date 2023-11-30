@@ -31,15 +31,16 @@ Next, you’ll add a new file to this repository.
 
 Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
 
----
+![Demo ObEGallery](https://github.com/chetan532/ozieats/blob/main/Screenshot%202023-11-07%20112721.png)
+![Demo ObEGallery](https://github.com/chetan532/ozieats/blob/main/Screenshot%202023-11-07%20112650.png)
+![Demo ObEGallery](https://github.com/chetan532/ozieats/blob/main/Screenshot%202023-11-07%20112624.png)
+![Demo ObEGallery](https://github.com/chetan532/ozieats/blob/main/Screenshot%202023-11-07%20112757.png)
+![Demo ObEGallery](https://github.com/chetan532/ozieats/blob/main/Screenshot%202023-11-07%20112823.png)
+![Demo ObEGallery](https://github.com/chetan532/ozieats/blob/main/Screenshot%202023-11-07%20112846.png)
+![Demo ObEGallery](https://github.com/chetan532/ozieats/blob/main/Screenshot%202023-11-07%20113020.png)
+![Demo ObEGallery](https://github.com/chetan532/ozieats/blob/main/Screenshot%202023-11-07%20113303.png)
+![Demo ObEGallery](https://github.com/chetan532/ozieats/blob/main/Screenshot%202023-11-07%20113327.png)
+![Demo ObEGallery](https://github.com/chetan532/ozieats/blob/main/Screenshot%202023-11-07%20113420.png)
+![Demo ObEGallery](https://github.com/chetan532/ozieats/blob/main/Screenshot%202023-11-07%20113438.png)
 
-## Clone a repository
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
-
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
-
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
