@@ -1,36 +1,57 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+# Android Food Delivery App
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+[![Build Status](https://travis-ci.org/chetan532/ozieats.svg?branch=master)](https://travis-ci.org/chetan532/ozieats)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+An advanced Android Food Delivery App built using the MVVM architecture, Kotlin, Clean Code principles, Retrofit for API calls, and includes Unit Testing. The app is designed for both food pickup and delivery, featuring a QR code scanner and various other functionalities.
 
----
+## Features
 
-## Edit a file
+- **MVVM Architecture**: Follows the Model-View-ViewModel architectural pattern for a clean and scalable codebase.
+- **Kotlin**: The entire codebase is written in Kotlin, leveraging its concise syntax and modern features.
+- **Clean Code**: Emphasis on writing clean, maintainable, and readable code to enhance collaboration and future development.
+- **Retrofit**: Utilizes Retrofit for efficient and robust API calls, ensuring seamless communication with the server.
+- **Unit Testing**: Includes a comprehensive suite of unit tests to validate the correctness of individual components.
+- **Food Pickup and Delivery**: Supports both food pickup and delivery options for a versatile user experience.
+- **QR Code Scanner**: Integrates a QR code scanner for easy order verification and tracking.
+- **[Add any other functionalities]**: Mention any additional features or functionalities specific to your app.
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+## Getting Started
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+### Prerequisites
 
----
+- Android Studio: [Download Android Studio](https://developer.android.com/studio)
+- Kotlin: [Install Kotlin](https://kotlinlang.org/docs/getting-started.html)
 
-## Create a file
+### Installation
 
-Next, you’ll add a new file to this repository.
+1. Clone the repository:
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+   ```bash
+   git clone https://github.com/chetan532/ozieats.git
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+   Open the project in Android Studio.
 
+Build and run the app on an emulator or physical device.
+
+## Architecture Overview
+
+The app follows the MVVM (Model-View-ViewModel) architecture, separating concerns and promoting maintainability. Here's a brief overview:
+
+Model: Represents the data and business logic of the application.
+View: Displays the UI and interacts with the user.
+ViewModel: Acts as an intermediary between the Model and View, handling UI-related logic and maintaining UI-related data.
+
+## Testing
+The app includes a suite of unit tests to ensure the reliability of its components. To run tests, use the following command:
+
+## Contributing
+Contributions are welcome! Please follow the contribution guidelines.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Demo Screenshots
 ![Demo ObEGallery](https://github.com/chetan532/ozieats/blob/main/Screenshot%202023-11-07%20112721.png)
 ![Demo ObEGallery](https://github.com/chetan532/ozieats/blob/main/Screenshot%202023-11-07%20112650.png)
 ![Demo ObEGallery](https://github.com/chetan532/ozieats/blob/main/Screenshot%202023-11-07%20112624.png)
